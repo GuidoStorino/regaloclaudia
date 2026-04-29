@@ -9,42 +9,161 @@ const STEPS = [
     type: "intro",
     eyebrow: "Para vos",
     title: ["¿Querés tu ", "regalo", " de cumpleaños?"],
-    body: "Hay algo esperándote. Pero primero tenés que ganártelo.",
+    body: "Hay algo esperándote.",
     btnLabel: "Quiero",
+    next: "reglas"
   },
   {
     type: "instructions",
+    id: "reglas",
     eyebrow: "Las reglas",
     title: "Es muy simple",
-    body: "Te voy a hacer una serie de preguntas.\nNo hay respuestas correctas — o quizás sí.\nAl final, vas a recibir una clave para descubrir tu regalo.",
+    body: "Primero hay unas preguntas.\nNo te preocupes, son muy fáciles",
     btnLabel: "Empezar",
+    next: "q1"
   },
 
-  // --- PREGUNTA (texto) ---
-  {
-    type: "question",
-    id: "q1",
-    text: "¿Tu pregunta acá?",
-    options: [
-      { label: "Opción A", value: "a" },
-      { label: "Opción B", value: "b" },
-    ],
-  },
 
-  // --- INTERLUDE (texto gracioso entre preguntas) ---
-  {
-    type: "interlude",
-    text: "Tu texto gracioso acá...",
-    btnLabel: "Continuar",
-  },
 
   // --- PREGUNTA CON IMÁGENES ---
   // Para usar imágenes, agregá image: "/nombre-archivo.jpg" a cada opción
   // y poné las imágenes en la carpeta /public del proyecto
+
+  {
+    type: "question",
+    id: "q1",
+    text: "Elegí uno",
+    questionNumber: 1,
+    options: [
+      { label: "Opción A", value: "a", image: "/austriaca.jpg" }, // image: "/foto-a.jpg"
+      { label: "Opción B", value: "b", image: "/salchichas.jpg" }, // image: "/foto-b.jpg"
+    ],
+    next: "i2"
+  },
+
+    {
+    type: "interlude",
+    id: "i2",
+    text: " ¿Viste? Es muy simple.",
+    btnLabel: "Continuar",
+  },
+
+  {
+    type: "question",
+    id: "q4",
+    text: "Elegí uno",
+    questionNumber: 2,
+    options: [
+      { label: "Opción A", value: "a", image: "/monet.jpg" }, // image: "/foto-a.jpg"
+      { label: "Opción B", value: "b", image: "/kandinsky.jpg" }, // image: "/foto-b.jpg"
+    ],
+    next: "i3"
+  },
+
+    {
+    type: "interlude",
+    id: "i3",
+    text: "Una papa. Sí, hasta aburrido.",
+    btnLabel: "Continuar",
+    next: "q0"
+  },
+
+        {
+    type: "question",
+    id: "q0",
+    text: "Compliquémoslo un poco. Uno salado, otro dulce...",
+    questionNumber: 3,
+    options: [
+      { label: "Opción A", value: "a", image: "/chocolate.jpg" }, // image: "/foto-a.jpg"
+      { label: "Opción B", value: "b", image: "/bondiola.jpg" }, // image: "/foto-b.jpg"
+    ],
+    next: "q6"
+  },
+
+          {
+    type: "question",
+    id: "q6",
+    text: "Hablemos de música",
+    questionNumber: 4,
+    options: [
+      { label: "Opción A", value: "a", image: "/you really got me.jpg" }, // image: "/foto-a.jpg"
+      { label: "Opción B", value: "b", image: "/ruby tuesday.jpg" }, // image: "/foto-b.jpg"
+    ],
+    next: "q7"
+  },
+
+{
+  type: "question",
+  id: "q7",
+  text: "¿Cuál?",
+  questionNumber: 5,
+  options: [
+    { label: "Opción A", value: "a", image: "/nanutria.jpg", next: "q9" },
+    { label: "Opción B", value: "b", image: "/ricky gervais.jpg", next: "q10" },
+  ],
+},
+
+{
+  type: "question",
+  id: "q9",
+  text: "¿Y ahora?",
+  questionNumber: 6,
+  options: [
+    { label: "Opción A", value: "a", image: "/nanutria.jpg", next: "i4" },
+    { label: "Opción B", value: "b", image: "/lucho mellera.jpg", next: "i6" },
+  ],
+  
+},
+
+{
+  type: "question",
+  id: "q10",
+  text: "¿Y ahora?",
+  questionNumber: 6,
+  options: [
+    { label: "Opción A", value: "a", image: "/ricky gervais 2.jpg", next: "i4"},
+    { label: "Opción B", value: "b", image: "/lucho mellera.jpg", next: "i5" },
+  ],
+},
+
+    {
+    type: "interlude",
+    id: "i4",
+    text: "Pobre Lucho. Tranquila, no le vamos a contar...",
+    btnLabel: "Continuar",
+    next: "i7"
+  },
+
+      {
+    type: "interlude",
+    id: "i5",
+    text: "Dice Ricky que el próximo especial va a tratar sobre vos...",
+    btnLabel: "Continuar",
+    next: "i7"
+  },
+
+        {
+    type: "interlude",
+    id: "i6",
+    text: "Quién lo habría imaginado.",
+    btnLabel: "Continuar",
+    next: "i7"
+  },
+
+          {
+    type: "interlude",
+    id: "i7",
+    text: "Empezando a transpirar un poco, ¿no?",
+    btnLabel: "Continuar",
+    next: "q2"
+  },
+
+
   {
     type: "question",
     id: "q2",
-    text: "Elegí uno",
+    text: "¿Cuál te gustó más?",
+    questionNumber: 7,
     options: [
       { label: "Opción A", value: "a", image: "/actos humanos.jpg" }, // image: "/foto-a.jpg"
       { label: "Opción B", value: "b", image: "/el hombre.jpg" }, // image: "/foto-b.jpg"
@@ -53,22 +172,45 @@ const STEPS = [
 
     {
     type: "question",
-    id: "q2",
-    text: "Elegí uno",
+    id: "q15",
+    text: "¿Y de estos?",
+    questionNumber: 8,
+    options: [
+      { label: "Opción A", value: "a", image: "/marquez.png" }, // image: "/foto-a.jpg"
+      { label: "Opción B", value: "b", image: "/allende.jpg" }, // image: "/foto-b.jpg"
+    ],
+  },
+
+         {
+    type: "interlude",
+    id: "i8",
+    text: "No le vamos a decir a nadie.",
+    btnLabel: "Continuar",
+    next: "q3"
+  },
+
+
+
+    {
+    type: "question",
+    id: "q3",
+    text: "Ya casi estamos",
+    questionNumber: 9,
     options: [
       { label: "Opción A", value: "a", image: "/iggy pop.jpg" }, // image: "/foto-a.jpg"
       { label: "Opción B", value: "b", image: "/bryan adams.png" }, // image: "/foto-b.jpg"
     ],
+    next: "result"
   },
 
   // --- RESULTADO FINAL ---
   {
     type: "result",
-    key: "1234-5678", // <-- poné la clave real acá
+    id: "result",
+    key: "28346", // <-- poné la clave real acá
     eyebrow: "Tu regalo",
     title: "Lo lograste",
     body: "Esta es tu clave. Guardala bien.",
-    footer: "Mostrá esta pantalla para canjear tu regalo.",
   },
 ];
 
@@ -84,23 +226,38 @@ function questionIndex(stepIndex) {
 }
 
 export default function App() {
-  const [current, setCurrent] = useState(0);
+  const [currentId, setCurrentId] = useState(null);
   const [answers, setAnswers] = useState({});
 
-  const step = STEPS[current];
+  const step = getStep()
 
-  function next() {
-    if (current < STEPS.length - 1) setCurrent((c) => c + 1);
+function getStep() {
+  if (currentId === null) return STEPS[0];
+  return STEPS.find((s) => s.id === currentId) || STEPS[0];
+}
+
+function next() {
+  const step = getStep();
+  if (step.next) {
+    setCurrentId(step.next);
+  } else {
+    const idx = STEPS.indexOf(step);
+    if (idx < STEPS.length - 1) setCurrentId(STEPS[idx + 1].id ?? null);
   }
+}
 
-  function answer(id, value) {
-    setAnswers((a) => ({ ...a, [id]: value }));
+function answer(id, value, nextId) {
+  setAnswers((a) => ({ ...a, [id]: value }));
+  if (nextId) {
+    setCurrentId(nextId);
+  } else {
     next();
   }
+}
 
   return (
     <div style={styles.app}>
-      <div style={styles.screen} key={current}>
+      <div style={styles.screen} key={currentId}>
         {step.type === "intro" && (
           <Intro step={step} onNext={next} />
         )}
@@ -110,7 +267,7 @@ export default function App() {
         {step.type === "question" && (
           <Question
             step={step}
-            stepIndex={current}
+            stepIndex={currentId}
             onAnswer={answer}
           />
         )}
@@ -166,8 +323,8 @@ function Instructions({ step, onNext }) {
 }
 
 function Question({ step, stepIndex, onAnswer }) {
-  const qIdx = questionIndex(stepIndex);
-  const total = QUESTION_STEPS.length;
+const qIdx = step.questionNumber;
+const total = 9; // el número total de preguntas
   const hasImages = step.options.some((o) => o.image);
 
   return (
@@ -191,7 +348,7 @@ function Question({ step, stepIndex, onAnswer }) {
       }}>
         {step.options.map((opt) => (
           <OptionBtn key={opt.value} opt={opt} hasImages={hasImages}
-            onClick={() => onAnswer(step.id, opt.value)} />
+    onClick={() => onAnswer(step.id, opt.value, opt.next)} />
         ))}
       </div>
     </div>
