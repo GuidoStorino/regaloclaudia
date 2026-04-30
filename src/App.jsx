@@ -17,7 +17,7 @@ const STEPS = [
     type: "instructions",
     id: "reglas",
     eyebrow: "Las reglas",
-    title: "Es muy simple",
+    title: "En un momento...",
     body: "Primero hay unas preguntas.\nNo te preocupes, son muy fáciles",
     btnLabel: "Empezar",
     next: "q1"
@@ -200,6 +200,17 @@ const STEPS = [
       { label: "Opción A", value: "a", image: "/iggy pop.jpg" }, // image: "/foto-a.jpg"
       { label: "Opción B", value: "b", image: "/bryan adams.png" }, // image: "/foto-b.jpg"
     ],
+  },
+
+    {
+    type: "question",
+    id: "qf",
+    text: "Ahora sí, la última.",
+    questionNumber: 9,
+    options: [
+      { label: "Opción A", value: "a", image: "/tomates.png" }, // image: "/foto-a.jpg"
+      { label: "Opción B", value: "b", image: "/cinema.jpg" }, // image: "/foto-b.jpg"
+    ],
     next: "result"
   },
 
@@ -324,7 +335,7 @@ function Instructions({ step, onNext }) {
 
 function Question({ step, stepIndex, onAnswer }) {
 const qIdx = step.questionNumber;
-const total = 9; // el número total de preguntas
+const total = 10; // el número total de preguntas
   const hasImages = step.options.some((o) => o.image);
 
   return (
