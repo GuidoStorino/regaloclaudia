@@ -109,8 +109,8 @@ const STEPS = [
   text: "¿Y ahora?",
   questionNumber: 6,
   options: [
-    { label: "Opción A", value: "a", image: "/nanutria.jpg", next: "i4" },
-    { label: "Opción B", value: "b", image: "/lucho mellera.jpg", next: "i6" },
+    { label: "Opción A", value: "a", image: "/nanutria.jpg", next: "i6" },
+    { label: "Opción B", value: "b", image: "/lucho mellera.jpg", next: "i9" },
   ],
   
 },
@@ -130,6 +130,14 @@ const STEPS = [
     type: "interlude",
     id: "i4",
     text: "Pobre Lucho. Tranquila, no le vamos a contar...",
+    btnLabel: "Continuar",
+    next: "i7"
+  },
+
+      {
+    type: "interlude",
+    id: "i9",
+    text: "Eso creímos que dirías...",
     btnLabel: "Continuar",
     next: "i7"
   },
@@ -206,7 +214,7 @@ const STEPS = [
     type: "question",
     id: "qf",
     text: "Ahora sí, la última.",
-    questionNumber: 9,
+    questionNumber: 10,
     options: [
       { label: "Opción A", value: "a", image: "/tomates.png" }, // image: "/foto-a.jpg"
       { label: "Opción B", value: "b", image: "/cinema.jpg" }, // image: "/foto-b.jpg"
